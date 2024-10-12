@@ -5,15 +5,16 @@
       position: fixed;  
   };
 </style>
-<h1 class="mb-4 mt-4"><%- tags %></h1>
-  <% articles.filter(article => article.tags === tags).forEach(article => { %>
+<h1 class="mb-4 mt-4"><%- tags === 'all' ? 'すべての記事' : tags %></h1>
+  <% const filteredArticles = (!tags || tags === 'all') ? articles : articles.filter(article => article.tags === tags); filteredArticles.forEach(article => {  %>
     <div class="card mt-3 mb-3 pt-1 pb-1">
         <div class="card-body">
           <h5 class="card-title"><%= article.name %></h5>
-          <p class="card-text"><%- article.description%></p>
+          <p class="card-text"><%- article.description %></p>
         </div>  
       </div>
   <% }) %>
+
 
 
   <script>
