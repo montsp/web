@@ -35,6 +35,10 @@ router.get('/about', (req, res, next) => {
   res.render('about');
 });
 
+router.get('/policy', (req, res, next) => {
+  res.render('policy');
+});
+
 //http://localhost:3000/?param=json
 
 module.exports = router;
